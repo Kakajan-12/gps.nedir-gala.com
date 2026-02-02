@@ -1,0 +1,329 @@
+{
+  "info": {
+    "_postman_id": "46e8110c-31ed-44b3-a7e6-f596b72d1d0b",
+    "name": "LogTech GPS",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "17286989"
+  },
+  "item": [
+    {
+      "name": "depot",
+      "item": [
+        {
+          "name": "create",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"Dashoguz Branch Depot\",\n    \"code\": \"DEP-001\",\n    \"phone\": \"+99312345678\",\n    \"type\": \"HEADQUARTERS\",\n    \"email\": \"central.depot@example.com\",\n    \"description\": \"Main operations hub\",\n    \"latitude\": 37.9601,\n    \"longitude\": 58.3261,\n    \"city\": \"Dashoguz\",\n    \"street\": \"123 Main St\",\n    \"district\": \"Downtown\",\n    \"regionId\": 1,\n    \"postalCode\": \"744000\",\n    \"addressNotes\": \"Gate 2\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/depots",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "depots"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "index",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/depots",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "depots"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "user",
+      "item": [
+        {
+          "name": "Login",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"phone\": \"+99361234567\",\n    \"password\": \"password123\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/auth/login",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "me",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/users/me",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "users",
+                "me"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "region",
+      "item": [
+        {
+          "name": "index",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/regions",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "regions"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "create",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"Ashgabat\",\n    \"code\": \"AG\",\n    \"active\": true\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/regions",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "regions"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "address",
+      "item": [
+        {
+          "name": "index",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/addresses",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "addresses"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "vehicle",
+      "item": [
+        {
+          "name": "index",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/vehicles",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "vehicles"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "create",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"model\": \"SE36SR\",\n    \"engineNumber\": \"EN-2024-001\",\n    \"plateNumber\": \"ASH-001\",\n    \"registrationNumber\": \"REG-001\",\n    \"depotId\": 1,\n    \"make\": \"Shantui\",\n    \"year\": 2023,\n    \"color\": \"Yellow\",\n    \"capacity\": 12.5,\n    \"capacityUnit\": \"m3\",\n    \"registrationDate\": \"2023-01-01\",\n    \"registrationExpiry\": \"2026-01-01\",\n    \"insuranceExpiry\": \"2025-12-31\",\n    \"status\": \"AVAILABLE\",\n    \"notes\": \"Main water supply vehicle\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/vehicles",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "vehicles"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "health",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"model\": \"SE36SR\",\n    \"engineNumber\": \"EN-2024-001\",\n    \"plateNumber\": \"ASH-001\",\n    \"registrationNumber\": \"REG-001\",\n    \"depotId\": 1,\n    \"make\": \"Shantui\",\n    \"year\": 2023,\n    \"color\": \"Yellow\",\n    \"capacity\": 12.5,\n    \"capacityUnit\": \"m3\",\n    \"registrationDate\": \"2023-01-01\",\n    \"registrationExpiry\": \"2026-01-01\",\n    \"insuranceExpiry\": \"2025-12-31\",\n    \"status\": \"AVAILABLE\",\n    \"notes\": \"Main water supply vehicle\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/v1/health",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "health"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInJvbGVJZCI6MSwiZGVwb3RJZCI6MiwicGhvbmUiOiIrOTkzNjEyMzQ1NjciLCJpYXQiOjE3NjUyMjcyNzcsImV4cCI6MTc2NTgzMjA3N30.d7NPB9grRAgqn-O1sS6ZITyuAueIoYukeK83aY6gftc",
+        "type": "string"
+      }
+    ]
+  },
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "",
+      "disabled": true
+    },
+    {
+      "key": "baseUrl",
+      "value": ""
+    }
+  ]
+}

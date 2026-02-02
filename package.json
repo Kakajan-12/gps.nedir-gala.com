@@ -1,0 +1,46 @@
+{
+  "name": "gps.nedir-gala.com",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint"
+  },
+  "dependencies": {
+    "@headlessui/react": "^2.2.9",
+    "axios": "^1.13.2",
+    "chart.js": "^4.5.1",
+    "clsx": "^2.1.1",
+    "date-fns": "^4.1.0",
+    "jwt-decode": "^4.0.0",
+    "leaflet": "^1.9.4",
+    "lucide-react": "^0.562.0",
+    "next": "^16.0.10",
+    "next-intl": "^4.5.8",
+    "radix-ui": "^1.4.3",
+    "react": "^19.2.3",
+    "react-chartjs-2": "^5.3.1",
+    "react-datepicker": "^9.0.0",
+    "react-dom": "^19.2.3",
+    "react-icons": "^5.5.0",
+    "react-leaflet": "^5.0.0",
+    "tailwind-merge": "^3.4.0",
+    "zustand": "^5.0.9"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.17",
+    "@types/leaflet": "^1.9.21",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-datepicker": "^6.2.0",
+    "@types/react-dom": "^19",
+    "autoprefixer": "^10.4.22",
+    "eslint": "^9",
+    "eslint-config-next": "16.0.6",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.18",
+    "typescript": "^5"
+  }
+}
