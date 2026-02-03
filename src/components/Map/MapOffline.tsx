@@ -1,6 +1,6 @@
 'use client';
 import { useEffect, useRef, useState } from 'react';
-import { Marker, MapContainer, TileLayer, useMap } from 'react-leaflet';
+import { Marker, MapContainer, TileLayer, useMap, LayersControl } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import carImg from '@/public/car.png';
@@ -119,11 +119,24 @@ export default function MapOffline() {
                 minZoom={5}
                 attributionControl={false}
             >
-                <TileLayer
-                    url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}"
-                    maxZoom={19}
-                    attribution="© Esri"
-                />
+                <LayersControl position="bottomright">
+                    <LayersControl.BaseLayer checked name="Спутник (Esri)">
+                        <TileLayer
+                            url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}"
+                            maxZoom={19}
+                            attribution="© Esri"
+                        />
+                    </LayersControl.BaseLayer>
+
+                    <LayersControl.BaseLayer name="OpenStreetMap">
+                        <TileLayer
+                            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                            maxZoom={19}
+                            attribution="© OpenStreetMap contributors"
+                        />
+                    </LayersControl.BaseLayer>
+                </LayersControl>
+
 
                 <RealtimeMarker position={position} />
             </MapContainer>
