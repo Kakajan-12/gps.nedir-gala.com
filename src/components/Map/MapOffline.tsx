@@ -130,10 +130,10 @@ export default function MapOffline() {
 
                     <LayersControl.BaseLayer name="OpenStreetMap">
                         <TileLayer
-                            url="https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}{r}.png"
-                            maxZoom={19}
-                            attribution='<a href="https://wikimediafoundation.org/wiki/Maps_Terms_of_Use">Wikimedia</a> | <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+                            url="https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png"
+                            attribution="&copy; OpenStreetMap contributors"
                         />
+
                     </LayersControl.BaseLayer>
                 </LayersControl>
 
